@@ -48,12 +48,12 @@ public class ButtonProcessing {
 				break;
 			}
 			Log.i("btnDown", "key:" + btn);
-			if (gameV.frame == 0) {
+			// 処理
+			if (GameView.frame == 1) {
 				if ((btn & A) == A) {
 					gameV.changeFrame();
 				}
 			}
-			
 			return btn;
 			
 		case MotionEvent.ACTION_UP:

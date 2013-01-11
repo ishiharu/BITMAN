@@ -10,7 +10,7 @@ import android.view.View;
 
 public class GameView extends View {
 	
-	public int			frame	= 0;	// 0最初,1スタート,2終わり
+	public static int	frame	= 0;	// 0最初,1説明,2スタート,3終わり
 	private Paint		strP;
 	private FontMetrics	fm		= null; // 左上を基点にするため
 										
@@ -18,7 +18,7 @@ public class GameView extends View {
 		super(context, attrs);
 		strP = new Paint();
 		strP.setColor(Color.WHITE);
-		strP.setTextSize(15 * GameActivity.density);
+		strP.setTextSize(15 * MActivity.density);
 		strP.setAntiAlias(true);
 		fm = strP.getFontMetrics();
 	}
@@ -27,26 +27,23 @@ public class GameView extends View {
 	protected void onDraw(Canvas c) {
 		super.onDraw(c);
 		switch (frame) {
-		case 0:
+		case 1:
 			String text1 = getContext().getString(R.string.game_text1);
 			int t2Pos = (int) strP.measureText(text1, 0, 5);
 			String text2 = getContext().getString(R.string.game_text2);
-			c.drawText(text1, 0, 100 * GameActivity.density, strP);
-			c.drawText(text2, t2Pos, 100 * GameActivity.density - fm.ascent, strP);
+			c.drawText(text1, 0, 100 * MActivity.density, strP);
+			c.drawText(text2, t2Pos, 100 * MActivity.density - fm.ascent, strP);
 			break;
-		case 1:
+		case 2:
 			
 		default:
 			break;
 		}
 	}
 	
+	/** 画面切り替え */
 	public void changeFrame() {
-		if (frame < 1) {
-			frame++;
-		} else {
-			frame = 0;
-		}
+		frame = (frame + 1) & 3;
 		invalidate();
 	}
 }
