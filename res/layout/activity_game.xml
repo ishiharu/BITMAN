@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/ButtonDown"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:text="@string/button_down"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/ButtonLeft"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ButtonDown"
+        android:layout_alignParentLeft="true"
+        android:text="@string/button_left"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/ButtonRight"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ButtonLeft"
+        android:layout_alignBottom="@+id/ButtonLeft"
+        android:layout_toRightOf="@+id/ButtonLeft"
+        android:text="@string/button_right"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/ButtonUp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ButtonLeft"
+        android:layout_alignLeft="@+id/ButtonDown"
+        android:text="@string/button_up"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/ButtonA"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ButtonRight"
+        android:layout_alignParentRight="true"
+        android:text="@string/button_a"
+        android:textSize="25sp" />
+
+    <jp.ishiharu.bitman.GameView
+        android:id="@+id/gameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextViewKey"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/TextViewKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ButtonUp"
+        android:layout_alignParentLeft="true"
+        android:text="@string/key"
+        android:textSize="20sp" />
+
+</RelativeLayout>

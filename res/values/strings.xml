@@ -2,7 +2,17 @@
 <resources>
 
     <string name="app_name">BITMAN</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="mode_easy">EASY</string>
+    <string name="mode_hard">HARD</string>
+    <string name="select_mode">(・_・)SELECT MODE</string>
+    <string name="button_down">↓</string>
+    <string name="button_left">←</string>
+    <string name="button_right">→</string>
+    <string name="button_up">↑</string>
+    <string name="button_a">Ａ</string>
+    <string name="game_text1">(・_・)コレカラ　ガンガン　ビットエンザン　ヲ　シテモラウゾ！！ </string>
+    <string name="game_text2">ジュンビ　ガ　デキタラ　A　ヲ　オセ！！</string>
+    <string name="key">←→：イドウ　↑↓：チェンジ　A：ケッテイ</string>
 
 </resources>
