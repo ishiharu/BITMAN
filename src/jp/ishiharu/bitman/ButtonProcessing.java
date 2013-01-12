@@ -48,12 +48,7 @@ public class ButtonProcessing {
 				break;
 			}
 			Log.i("btnDown", "key:" + btn);
-			// 処理
-			if (GameView.frame == 1) {
-				if ((btn & A) == A) {
-					gameV.changeFrame();
-				}
-			}
+			actDwn();
 			return btn;
 			
 		case MotionEvent.ACTION_UP:
@@ -81,5 +76,14 @@ public class ButtonProcessing {
 			return btn;
 		}
 		
+	}
+	
+	/** 処理 */
+	private void actDwn() {
+		if (GameView.frame == GameView.FRAME_DESCRIPTION) {
+			if ((btn & A) == A) {
+				gameV.changeFrame();
+			}
+		}
 	}
 }

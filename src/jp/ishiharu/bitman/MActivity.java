@@ -16,7 +16,10 @@ public class MActivity extends Activity implements OnTouchListener {
 	public static float			density;
 	// public static int dispX;
 	// public static int dispY;
-	private int					mode;
+	/** 0easy,1hard */
+	public static int			mode;
+	public static final int		MODE_EASY	= 0;
+	public static final int		MODE_HARD	= 1;
 	private ButtonProcessing	btnP;
 	
 	@Override
@@ -40,10 +43,10 @@ public class MActivity extends Activity implements OnTouchListener {
 	public void buttonClick(View v) {
 		switch (v.getId()) {
 		case R.id.ButtonEasy:
-			mode = 0;
+			mode = MODE_EASY;
 			break;
 		case R.id.ButtonHard:
-			mode = 1;
+			mode = MODE_HARD;
 			break;
 		}
 		changeView();
@@ -63,7 +66,7 @@ public class MActivity extends Activity implements OnTouchListener {
 		riB.setOnTouchListener(this);
 		aB.setOnTouchListener(this);
 		btnP = new ButtonProcessing(findViewById(R.id.gameView));
-		GameView.frame = 1;
+		GameView.frame = GameView.FRAME_DESCRIPTION;
 	}
 	
 	@Override
@@ -71,6 +74,7 @@ public class MActivity extends Activity implements OnTouchListener {
 		int id = v.getId();
 		int event = e.getAction() & MotionEvent.ACTION_MASK;
 		btnP.touch(id, event);
+		// TODO 最初に戻るときは返り値−１にでもして切り替えよか。
 		// Log.i("touch", "touch");
 		return false;
 	}
